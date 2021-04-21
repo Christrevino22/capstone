@@ -1,79 +1,28 @@
 // NEED TO FIGURE OUT HOW TO LINK MY DATABASE UP TO MY SERVER BUT I ALSO NEED TO CREATE A SERVER TOO DUHHHH
+const express = require("express");
+const mysql = require("mysql");
 
+const app = express();
 
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "chris",
+  password: "123456789",
+  database: "acme",
+});
 
+db.connect();
 
+app.get("/users", (req, res) => {
+  const sql = "SELECT * FROM users";
 
+  db.query(sql, (err, result) => {
+    if (err) throw err;
+    res.send(result);
+  });
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.listen(5000, () => console.log("Server started"));
 
 // const express = require('express');
 // const mysql = require('mysql');
@@ -103,13 +52,11 @@
 // //     if(err) throw err
 // //       console.log(result);
 // //       res.send('database created....');
-  
+
 // //   })
 
 // // })
 
-
 // app.listen('3000', () => {
 //     console.log('Server started on PORT 3000')
 // });
-
