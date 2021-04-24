@@ -3,35 +3,25 @@ const express = require("express");
 const mysql = require("mysql");
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "chris",
-  password: "123456789",
-  database: "acme",
+ 
+
+// db.connect();
+
+app.get("/", (req, res) => {
+  // const sql = "SELECT * FROM users";
+
+  // db.query(sql, (err, result) => {
+  //   if (err) throw err;
+  //   res.send(result);
+  res.send('Hello Future Dev!!!!')
+  // });
 });
 
-db.connect();
-
-app.get("/users", (req, res) => {
-  const sql = "SELECT * FROM users";
-
-  db.query(sql, (err, result) => {
-    if (err) throw err;
-    res.send(result);
-  });
-});
-
-app.listen(5000, () => console.log("Server started"));
-
-
-
-
-
+app.listen(PORT, () => console.log("Server started... Listening on PORT 5000"));
 
 // vscode://vscode.github-authentication/did-authenticate?windowid=1&code=762cbc2e01bb606429ff&state=f989ba32-49e5-4172-9455-7ada942e783b
-
-
 
 // const express = require('express');
 // const mysql = require('mysql');
