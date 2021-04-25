@@ -1,7 +1,7 @@
 const mysql = require("mysql");
 
 require("dotenv").config();
-console.log(process.env);
+// console.log(process.env);
 class Connection {
   constructor() {
     if (!this.pool) {
