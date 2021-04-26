@@ -1,7 +1,7 @@
 // NEED TO FIGURE OUT HOW TO LINK MY DATABASE UP TO MY SERVER BUT I ALSO NEED TO CREATE A SERVER TOO DUHHHH
 const express = require("express");
 const bodyParser = require("body-parser");
-const furniture = require("./routers/furniture");
+const furniture = require("./routers/furniture/index");
 const cors = require("cors");
 const mysql = require("mysql");
 const pool = require("./sql/connection");
@@ -44,7 +44,9 @@ app.get("/", (req, res) => {
 //   );
 // });
 
-app.listen(PORT, () => console.log("Server started... Listening on PORT 5000"));
+app.listen(PORT, () =>
+  console.log(`Server started... Listening on PORT ${PORT}`)
+);
 // const express = require('express');
 // const mysql = require('mysql');
 

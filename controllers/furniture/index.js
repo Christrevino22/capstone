@@ -20,7 +20,7 @@ const show = (req, res) => {
 };
 
 const create = (req, res) => {
-  const book = req.body;
+  const furniture = req.body;
 
   // Values have to be surrounded by strings!  Got ya.
   pool.query(
