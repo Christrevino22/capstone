@@ -17,12 +17,12 @@ app.get("/", (req, res) => {
   res.send("Welcome to the furniture store!!!!");
 });
 
-app.get("/furniture", (req, res) => {
-  pool.query("SELECT * FROM furniture", (err, rows) => {
-    if (err) throw new Error(err);
-    return res.json(rows);
-  });
-});
+// app.get("/furniture", (req, res) => {
+//   pool.query("SELECT * FROM furniture", (err, rows) => {
+//     if (err) throw new Error(err);
+//     return res.json(rows);
+//   });
+// });
 
 // app.get("/furniture/:id", (req, res) => {
 //   const id = req.params.id;
