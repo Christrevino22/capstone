@@ -5,7 +5,7 @@ const pool = require("../../sql/connection");
 const list = (req, res) => {
   pool.query("SELECT * FROM furniture", (err, rows) => {
     if (err) throw new Error(err);
-    return res.send(rows);
+    return res.json(rows);
   });
 };
 
@@ -15,7 +15,7 @@ const show = (req, res) => {
 
   pool.query(`SELECT * FROM furniture WHERE id = ${id}`, (err, rows) => {
     if (err) throw new Error(err);
-    return res.send(rows);
+    return res.json(rows);
   });
 };
 
@@ -43,7 +43,7 @@ const update = (req, res) => {
     if (err) {
       throw new Error(err);
     }
-    return res.send({ id: results.message });
+    return res.json({ id: results.message });
   });
 };
 
