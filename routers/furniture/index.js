@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const {
+  list,
+  show,
   create,
   update,
   remove,
-  show,
-  list,
 } = require("../../controllers/furniture");
 
 router.get("/furniture", list);

@@ -4,7 +4,9 @@ const pool = require("../../sql/connection");
 
 const list = (req, res) => {
   pool.query("SELECT * FROM furniture", (err, rows) => {
-    if (err) throw new Error(err);
+    if (err) {
+      throw new Error(err);
+    }
     return res.json(rows);
   });
 };
@@ -14,7 +16,9 @@ const show = (req, res) => {
   console.log(id);
 
   pool.query(`SELECT * FROM furniture WHERE id = ${id}`, (err, rows) => {
-    if (err) throw new Error(err);
+    if (err) {
+      throw new Error(err);
+    }
     return res.json(rows);
   });
 };
