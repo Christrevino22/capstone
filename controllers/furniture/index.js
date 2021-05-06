@@ -3,6 +3,7 @@ const mysql = require("mysql");
 const pool = require("../../sql/connection");
 
 const list = (req, res) => {
+  console.log("we hit it");
   pool.query("SELECT * FROM furniture", (err, rows) => {
     if (err) {
       throw new Error(err);
